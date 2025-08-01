@@ -3,7 +3,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: #f5f9fc;
+  background: #eef2f5;
   color: #333;
 }
 
@@ -11,18 +11,19 @@ body {
   background: linear-gradient(135deg, #4b79a1, #283e51);
   color: white;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 2.5rem 1rem;
 }
 
 .title-fancy {
   margin: 0;
   font-size: 2.5rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
 }
 
 .intro {
   margin-top: 0.5rem;
   font-size: 1.1rem;
+  opacity: 0.9;
 }
 
 .container {
@@ -39,54 +40,81 @@ body {
   gap: 1rem;
 }
 
-.info-box, .expandable {
+/* Info Box */
+.info-box {
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1rem;
   position: relative;
-  overflow: hidden;
 }
 
 .info-box h2 {
-  margin: 0;
-  background: #e1ecf4;
-  padding: 0.75rem 1rem;
-  font-size: 1.25rem;
+  margin-top: 0;
+  font-size: 1.3rem;
   color: #205081;
 }
 
 .info-box p {
-  padding: 0.75rem 1rem;
+  margin: 0.8rem 0;
 }
 
-.hover-btn {
+/* Hover Summary */
+.hover-container {
   position: absolute;
-  bottom: 0.5rem;
-  right: 0.5rem;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.summary-btn {
   background: #205081;
-  color: white;
+  color: #fff;
   border: none;
-  padding: 0.3rem 0.6rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 4px;
   cursor: pointer;
   font-size: 0.9rem;
 }
 
 .hover-popup {
-  display: none;
   position: absolute;
   bottom: 2.5rem;
-  right: 0.5rem;
-  background: rgba(255,255,255,0.95);
+  right: 0;
+  background: #fff;
   border: 1px solid #ccc;
-  padding: 0.75rem;
+  padding: 0.75rem 1rem;
   border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
   z-index: 10;
 }
 
-.expandable .exp-btn {
+.hover-popup.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.hover-popup h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.3rem;
+}
+
+/* Expandable Section */
+.expandable {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.exp-btn {
   width: 100%;
   background: #f0f4f8;
   border: none;
@@ -97,7 +125,7 @@ body {
   position: relative;
 }
 
-.expandable .exp-btn::after {
+.exp-btn::after {
   content: '+';
   position: absolute;
   right: 1rem;
@@ -105,23 +133,23 @@ body {
   transition: transform 0.3s ease;
 }
 
-.expandable .exp-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.4s ease;
-  padding: 0 1rem;
+.exp-btn.open::after {
+  content: '-';
 }
 
-.expandable .exp-content.open {
+.exp-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1rem;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.exp-content.open {
   max-height: 300px;
   padding: 1rem;
 }
 
-.expandable .exp-btn.open::after,
-.expandable .exp-content.open + .exp-btn::after {
-  content: '-';
-}
-
+/* Footer */
 .footer-fancy {
   text-align: center;
   padding: 1rem;
