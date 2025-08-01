@@ -1,129 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AI-Powered Grading System Report</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>AI-Powered Grading System</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-  <header>
-    <h1>AI-Powered Answer-Sheet Grading System</h1>
-    <p class="subtitle">Comprehensive Project Report</p>
+  <header class="header-fancy">
+    <h1 class="title-fancy">AI-Powered Answer-Sheet Grading System</h1>
+    <p class="intro">Automating assessment with advanced OCR, NLP, and human-in-the-loop for accurate, scalable grading.</p>
   </header>
 
-  <div class="accordion">
-
-    <div class="accordion-item">
-      <button class="accordion-btn">1. Previous Model Overview</button>
-      <div class="accordion-content">
-        <ul>
-          <li><strong>Basic OCR Integration</strong> using open-source Tesseract for printed text only.</li>
-          <li><strong>Keyword Matching</strong> for short-answer grading.</li>
-          <li><strong>Manual Workflow</strong> for flagged answers.</li>
-          <li><strong>Limitations:</strong> poor handwriting accuracy (~70%), no semantic analysis, no confidence scoring.</li>
-        </ul>
+  <main class="container">
+    <!-- Top Row: Two Info Boxes -->
+    <div class="grid-2">
+      <div class="info-box">
+        <h2>Previous Model Overview</h2>
+        <p>The first prototypes used Tesseract OCR and exact keyword matching. Accuracy was limited (~70%), and paraphrased answers weren’t recognized.</p>
+        <button class="hover-btn">Summary</button>
+        <div class="hover-popup">
+          • Basic OCR (printed only)<br/>
+          • Keyword matching<br/>
+          • Manual flagging<br/>
+          • No semantic analysis
+        </div>
+      </div>
+      <div class="info-box">
+        <h2>Current Project Plan</h2>
+        <p>Next-gen system integrates Google Vision, transformer-based semantic matching, confidence scoring, and human review workflows.</p>
+        <button class="hover-btn">Summary</button>
+        <div class="hover-popup">
+          • Hybrid OCR+HTR<br/>
+          • Semantic embeddings<br/>
+          • Confidence thresholds<br/>
+          • Human-in-loop QC
+        </div>
       </div>
     </div>
 
-    <div class="accordion-item">
-      <button class="accordion-btn">2. Current Project Plan</button>
-      <div class="accordion-content">
-        <h3>2.1 Architecture</h3>
-        <ol>
-          <li><strong>Client UI:</strong> file uploads, status dashboard</li>
-          <li><strong>Backend Services:</strong>
-            <ul>
-              <li>OCR microservice (Google Vision + custom HTR)</li>
-              <li>Semantic analysis (transformers)</li>
-              <li>Grading engine with confidence thresholds</li>
-              <li>Manual-review queue</li>
-            </ul>
-          </li>
-          <li><strong>Data Storage:</strong> MongoDB for documents, PostgreSQL for grades/logs</li>
-          <li><strong>DevOps:</strong> Docker/Kubernetes, RabbitMQ, auto-scaling</li>
-        </ol>
-        <h3>2.2 Milestones & Timeline</h3>
-        <table>
-          <thead>
-            <tr><th>Phase</th><th>Task</th><th>Duration</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>1</td><td>OCR Prototype</td><td>2 weeks</td></tr>
-            <tr><td>2</td><td>Semantic Matching</td><td>3 weeks</td></tr>
-            <tr><td>3</td><td>Grading Engine</td><td>3 weeks</td></tr>
-            <tr><td>4</td><td>Human Review Interface</td><td>2 weeks</td></tr>
-            <tr><td>5</td><td>Performance & Deployment</td><td>2 weeks</td></tr>
-          </tbody>
-        </table>
-        <h3>2.3 Technology Stack</h3>
-        <ul>
-          <li><strong>Frontend:</strong> React.js or Angular</li>
-          <li><strong>Backend:</strong> Node.js + Express (or Django)</li>
-          <li><strong>AI/NLP:</strong> Google Cloud Vision, HuggingFace Transformers</li>
-          <li><strong>DB & Cache:</strong> MongoDB, PostgreSQL, Redis</li>
-          <li><strong>DevOps:</strong> Docker, Kubernetes, RabbitMQ</li>
-        </ul>
+    <!-- Middle Row: Two Info Boxes -->
+    <div class="grid-2">
+      <div class="info-box">
+        <h2>Achievements & Metrics</h2>
+        <p>Prototype v0.3 achieved 85% grading accuracy and cut grading time by 50% compared to manual evaluation.</p>
+        <button class="hover-btn">Summary</button>
+        <div class="hover-popup">
+          • 85% accuracy<br/>
+          • 50% time saved<br/>
+          • Synonym support<br/>
+          • Early confidence scoring
+        </div>
+      </div>
+      <div class="info-box">
+        <h2>Benefits & Impact</h2>
+        <p>Reduces educator workload by 80%, delivers instant feedback, and enables large-scale exams with consistent, unbiased grading.</p>
+        <button class="hover-btn">Summary</button>
+        <div class="hover-popup">
+          • −80% grading time<br/>
+          • Instant feedback<br/>
+          • Bias reduction<br/>
+          • Analytics dashboard
+        </div>
       </div>
     </div>
 
-    <div class="accordion-item">
-      <button class="accordion-btn">3. Previous Models & Achievements</button>
-      <div class="accordion-content">
-        <ul>
-          <li>Prototype v0.1: Tesseract OCR + exact-match grading → 70% accuracy</li>
-          <li>Prototype v0.2: Added synonym mapping → 78% accuracy</li>
-          <li>Prototype v0.3: Simple neural-network scoring → 85% accuracy, 50 % time saved vs manual</li>
-        </ul>
+    <!-- Bottom Row: Two Expandable Sections -->
+    <div class="grid-2">
+      <div class="expandable">
+        <button class="exp-btn">Social & Human Computing Impact</button>
+        <div class="exp-content">
+          <ul>
+            <li>Frees teachers from repetitive tasks</li>
+            <li>Supports remote and inclusive assessments</li>
+            <li>Generates analytics for pedagogical insights</li>
+          </ul>
+        </div>
+      </div>
+      <div class="expandable">
+        <button class="exp-btn">Future Prospects & Extensions</button>
+        <div class="exp-content">
+          <ul>
+            <li>Math formula OCR and derivation checking</li>
+            <li>Diagram recognition for sciences</li>
+            <li>Integration with LMS and proctoring</li>
+            <li>Peer learning and predictive interventions</li>
+          </ul>
+        </div>
       </div>
     </div>
+  </main>
 
-    <div class="accordion-item">
-      <button class="accordion-btn">4. Benefits & Time Savings</button>
-      <div class="accordion-content">
-        <ul>
-          <li>Reduces grading time by up to 80%</li>
-          <li>Consistent, bias-free scoring</li>
-          <li>Immediate feedback to students</li>
-          <li>Teachers can focus on pedagogy instead of paperwork</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="accordion-item">
-      <button class="accordion-btn">5. Social & Human Impact</button>
-      <div class="accordion-content">
-        <ul>
-          <li>Decreases repetitive manual tasks for educators</li>
-          <li>Enables large-scale assessments with limited staff</li>
-          <li>Supports inclusive education by providing detailed analytics</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="accordion-item">
-      <button class="accordion-btn">6. Future Prospects</button>
-      <div class="accordion-content">
-        <ul>
-          <li>Extending to math derivations with formula recognition</li>
-          <li>Diagram interpretation for sciences (biology, geography)</li>
-          <li>Peer-learning analytics and predictive intervention</li>
-          <li>Integration into LMS and remote proctoring platforms</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-
-  <footer>
-    <p>&copy; 2025 AI Grading Project Team</p>
+  <footer class="footer-fancy">
+    &copy; 2025 AI Grading Project Team
   </footer>
 
   <script>
-    document.querySelectorAll('.accordion-btn').forEach(btn => {
+    // Hover summary popups
+    document.querySelectorAll('.hover-btn').forEach(btn => {
+      btn.addEventListener('mouseenter', () => {
+        btn.nextElementSibling.style.display = 'block';
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.nextElementSibling.style.display = 'none';
+      });
+    });
+    // Expand/collapse sections
+    document.querySelectorAll('.exp-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        const item = btn.parentElement;
-        item.classList.toggle('open');
+        const content = btn.nextElementSibling;
+        content.classList.toggle('open');
       });
     });
   </script>
