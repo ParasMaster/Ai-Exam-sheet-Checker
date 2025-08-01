@@ -9,71 +9,88 @@
 <body>
   <header class="header-fancy">
     <h1 class="title-fancy">AI-Powered Answer-Sheet Grading System</h1>
-    <p class="intro">Automating assessment with advanced OCR, NLP, and human-in-the-loop for accurate, scalable grading.</p>
+    <p class="intro">Automating assessment with advanced OCR, NLP, and human oversight for accurate, scalable grading.</p>
   </header>
 
   <main class="container">
-    <!-- Top Row: Two Info Boxes -->
     <div class="grid-2">
       <div class="info-box">
         <h2>Previous Model Overview</h2>
-        <p>The first prototypes used Tesseract OCR and exact keyword matching. Accuracy was limited (~70%), and paraphrased answers weren’t recognized.</p>
-        <button class="hover-btn">Summary</button>
-        <div class="hover-popup">
-          • Basic OCR (printed only)<br/>
-          • Keyword matching<br/>
-          • Manual flagging<br/>
-          • No semantic analysis
+        <p>The initial prototypes used Tesseract OCR and exact keyword matching, yielding ~70% accuracy and no semantic flexibility.</p>
+        <div class="hover-container">
+          <button class="summary-btn">Summary</button>
+          <div class="hover-popup">
+            <h3>Summary</h3>
+            <ul>
+              <li>Basic OCR (printed only)</li>
+              <li>Keyword matching</li>
+              <li>Manual flagging</li>
+              <li>No semantic analysis</li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="info-box">
         <h2>Current Project Plan</h2>
-        <p>Next-gen system integrates Google Vision, transformer-based semantic matching, confidence scoring, and human review workflows.</p>
-        <button class="hover-btn">Summary</button>
-        <div class="hover-popup">
-          • Hybrid OCR+HTR<br/>
-          • Semantic embeddings<br/>
-          • Confidence thresholds<br/>
-          • Human-in-loop QC
+        <p>Next-gen system with Google Vision OCR, transformer-based semantic matching, confidence scoring, and human-in-loop review.</p>
+        <div class="hover-container">
+          <button class="summary-btn">Summary</button>
+          <div class="hover-popup">
+            <h3>Summary</h3>
+            <ul>
+              <li>Hybrid OCR + HTR</li>
+              <li>Semantic embeddings</li>
+              <li>Confidence thresholds</li>
+              <li>Human-in-loop QC</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Middle Row: Two Info Boxes -->
     <div class="grid-2">
       <div class="info-box">
         <h2>Achievements & Metrics</h2>
-        <p>Prototype v0.3 achieved 85% grading accuracy and cut grading time by 50% compared to manual evaluation.</p>
-        <button class="hover-btn">Summary</button>
-        <div class="hover-popup">
-          • 85% accuracy<br/>
-          • 50% time saved<br/>
-          • Synonym support<br/>
-          • Early confidence scoring
+        <p>Prototype v0.3 achieved 85% accuracy and cut grading time by 50% vs manual evaluation.</p>
+        <div class="hover-container">
+          <button class="summary-btn">Summary</button>
+          <div class="hover-popup">
+            <h3>Summary</h3>
+            <ul>
+              <li>85% accuracy</li>
+              <li>50% time saved</li>
+              <li>Synonym support</li>
+              <li>Early confidence scoring</li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="info-box">
         <h2>Benefits & Impact</h2>
-        <p>Reduces educator workload by 80%, delivers instant feedback, and enables large-scale exams with consistent, unbiased grading.</p>
-        <button class="hover-btn">Summary</button>
-        <div class="hover-popup">
-          • −80% grading time<br/>
-          • Instant feedback<br/>
-          • Bias reduction<br/>
-          • Analytics dashboard
+        <p>Reduces educator workload by 80%, delivers instant feedback, and ensures consistent, unbiased grading.</p>
+        <div class="hover-container">
+          <button class="summary-btn">Summary</button>
+          <div class="hover-popup">
+            <h3>Summary</h3>
+            <ul>
+              <li>−80% grading time</li>
+              <li>Instant feedback</li>
+              <li>Bias reduction</li>
+              <li>Analytics dashboard</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Bottom Row: Two Expandable Sections -->
     <div class="grid-2">
       <div class="expandable">
         <button class="exp-btn">Social & Human Computing Impact</button>
         <div class="exp-content">
           <ul>
             <li>Frees teachers from repetitive tasks</li>
-            <li>Supports remote and inclusive assessments</li>
-            <li>Generates analytics for pedagogical insights</li>
+            <li>Supports remote & inclusive assessments</li>
+            <li>Generates analytics for pedagogy</li>
           </ul>
         </div>
       </div>
@@ -81,35 +98,32 @@
         <button class="exp-btn">Future Prospects & Extensions</button>
         <div class="exp-content">
           <ul>
-            <li>Math formula OCR and derivation checking</li>
+            <li>Math formula OCR & derivation checking</li>
             <li>Diagram recognition for sciences</li>
-            <li>Integration with LMS and proctoring</li>
-            <li>Peer learning and predictive interventions</li>
+            <li>LMS & proctoring platform integration</li>
+            <li>Peer-learning analytics</li>
           </ul>
         </div>
       </div>
     </div>
   </main>
 
-  <footer class="footer-fancy">
-    &copy; 2025 AI Grading Project Team
-  </footer>
+  <footer class="footer-fancy">&copy; 2025 AI Grading Project Team</footer>
 
   <script>
     // Hover summary popups
-    document.querySelectorAll('.hover-btn').forEach(btn => {
-      btn.addEventListener('mouseenter', () => {
-        btn.nextElementSibling.style.display = 'block';
-      });
-      btn.addEventListener('mouseleave', () => {
-        btn.nextElementSibling.style.display = 'none';
-      });
+    document.querySelectorAll('.hover-container').forEach(container => {
+      const btn = container.querySelector('.summary-btn');
+      const popup = container.querySelector('.hover-popup');
+      btn.addEventListener('mouseover', () => popup.classList.add('visible'));
+      btn.addEventListener('mouseout', () => popup.classList.remove('visible'));
     });
     // Expand/collapse sections
     document.querySelectorAll('.exp-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const content = btn.nextElementSibling;
         content.classList.toggle('open');
+        btn.classList.toggle('open');
       });
     });
   </script>
