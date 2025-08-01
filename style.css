@@ -1,0 +1,75 @@
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+header {
+  background-color: #004080;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header .subtitle {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+section {
+  padding: 1.5rem 2rem;
+  background: white;
+  margin: 1rem auto;
+  max-width: 900px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  border-bottom: 2px solid #004080;
+  padding-bottom: 0.3rem;
+  color: #004080;
+}
+
+h3 {
+  margin-top: 1rem;
+  color: #0060c0;
+}
+
+ul, ol {
+  margin: 0.5rem 0 1rem 1.5rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+table th {
+  background-color: #e0e0e0;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background: #004080;
+  color: white;
+  margin-top: 2rem;
+}
