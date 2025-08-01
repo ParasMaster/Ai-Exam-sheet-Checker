@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Answer-Sheet Grading System: Previous Model & Current Plan</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>AI-Powered Answer-Sheet Grading System</h1>
+    <p class="subtitle">Previous Model Overview & Current Project Plan</p>
+  </header>
+
+  <section id="previous-model">
+    <h2>1. Previous Model Overview</h2>
+    <p>The previous prototype implemented:</p>
+    <ul>
+      <li><strong>Basic OCR Integration</strong> using open-source Tesseract for printed text only.</li>
+      <li><strong>Keyword Matching</strong> for short-answer grading, relying on exact word overlap.</li>
+      <li><strong>Manual Workflow</strong> where low-match answers were flagged for teacher review.</li>
+      <li><strong>Limitations:</strong>
+        <ul>
+          <li>Poor handwriting accuracy (≈70%).</li>
+          <li>Inflexible to synonyms or paraphrasing.</li>
+          <li>No confidence scoring or semantic analysis.</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section id="current-plan">
+    <h2>2. Current Project Plan</h2>
+    <h3>2.1. Goals</h3>
+    <ul>
+      <li>High-accuracy OCR for both printed and handwritten text.</li>
+      <li>Semantic answer understanding to allow paraphrasing.</li>
+      <li>Automated grading with confidence scoring.</li>
+      <li>Human-in-the-Loop review for low-confidence cases.</li>
+    </ul>
+
+    <h3>2.2. Architecture</h3>
+    <ol>
+      <li><strong>Client UI</strong>
+        <ul>
+          <li>Web form for uploading PDFs/images of answer sheets</li>
+          <li>Status dashboard for processed and flagged items</li>
+        </ul>
+      </li>
+      <li><strong>Backend Services</strong>
+        <ul>
+          <li>OCR microservice (e.g., Google Vision + custom HTR model)</li>
+          <li>Semantic analysis service using transformer models</li>
+          <li>Grading engine with configurable rubrics & confidence thresholds</li>
+          <li>Manual‐review queue and annotation interface</li>
+        </ul>
+      </li>
+      <li><strong>Data Storage</strong>
+        <ul>
+          <li>Document store (MongoDB) for scanned images and text</li>
+          <li>Relational DB (PostgreSQL) for grades and audit logs</li>
+        </ul>
+      </li>
+      <li><strong>DevOps & Scaling</strong>
+        <ul>
+          <li>Containerized services (Docker/Kubernetes)</li>
+          <li>Asynchronous processing via message queues (RabbitMQ)</li>
+          <li>Auto‐scaling on cloud infrastructure</li>
+        </ul>
+      </li>
+    </ol>
+
+    <h3>2.3. Milestones & Timeline</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Phase</th>
+          <th>Tasks</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Phase 1</td>
+          <td>OCR & Text Extraction Prototype</td>
+          <td>2 weeks</td>
+        </tr>
+        <tr>
+          <td>Phase 2</td>
+          <td>Semantic Analysis & Similarity Matching</td>
+          <td>3 weeks</td>
+        </tr>
+        <tr>
+          <td>Phase 3</td>
+          <td>Automated Grading Engine & Confidence Scoring</td>
+          <td>3 weeks</td>
+        </tr>
+        <tr>
+          <td>Phase 4</td>
+          <td>Human Review Interface & Workflow</td>
+          <td>2 weeks</td>
+        </tr>
+        <tr>
+          <td>Phase 5</td>
+          <td>Performance Tuning & Deployment</td>
+          <td>2 weeks</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>2.4. Technology Stack</h3>
+    <ul>
+      <li><strong>Frontend:</strong> React.js or Angular</li>
+      <li><strong>Backend:</strong> Node.js + Express.js (or Django)</li>
+      <li><strong>OCR & NLP:</strong> Google Cloud Vision, HuggingFace transformers</li>
+      <li><strong>Databases:</strong> MongoDB, PostgreSQL, Redis</li>
+      <li><strong>DevOps:</strong> Docker, Kubernetes, RabbitMQ</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 AI Grading Project Team</p>
+  </footer>
+</body>
+</html>
